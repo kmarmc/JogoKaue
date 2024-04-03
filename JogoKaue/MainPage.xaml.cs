@@ -2,23 +2,38 @@
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
 
+   Cachorro Scooby;
+   Gato Miau;
+   Tigre Tiger; 
+   Personagem atual;
+  
 	public MainPage()
-	{
+    {
 		InitializeComponent();
-	}
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
+		imgPersonagem.Source = "doguinho.jpg";
+		Scooby = new Cachorro();
+		Miau = new Gato();
+		Tiger = new Tigre();
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+		atual = Scooby;
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+		imgPersonagem.Source = atual.GetNomeDaFoto();
+
+    }
+     void BotaoTrocar(object sender, EventArgs args)
+     {
+		if (atual == Scooby)
+			atual = Miau;
+		else if (atual == Miau)
+				atual = Tiger;
+		else if (atual == Tiger)
+				atual = Scooby;
+
+		imgPersonagem.Source= atual.GetNomeDaFoto();
+     }
+
+
 }
 
