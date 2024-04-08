@@ -17,6 +17,7 @@ namespace JogoKaue;
     {
         return NomeDaFoto; 
     }
+    
    public void SetFome (double f)
    {
       if (f >= 0 && f <= 1)
@@ -26,6 +27,10 @@ namespace JogoKaue;
       else if (f < 0)
       fome = 0;
    }
+   public double GetFome()
+    {
+        return fome; 
+    }
   public void SetSede (double s)
    {
       if (s >= 0 && s <= 1)
@@ -35,6 +40,10 @@ namespace JogoKaue;
       else if (s < 0)
       sede = 0;
    }
+   public double GetSede()
+    {
+        return sede; 
+    }
    public void SetSono (double p)
    {
       if (p >= 0 && p <= 1)
@@ -44,4 +53,8 @@ namespace JogoKaue;
       else if (p < 0)
       sono = 0;
    }
+   public double GetSono()
+    {
+        return sono; 
+    }
  }

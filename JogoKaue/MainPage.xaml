@@ -1,49 +1,108 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="JogoKaue.MainPage">
+             x:Class="JogoKaue.MainPage"
+             Shell.NavBarIsVisible="false">
 
          <Grid>
      <Grid.RowDefinitions>
        <RowDefinition Height="*"/>
-       <RowDefinition Height="*"/>
-       <RowDefinition Height="*"/>
-       <RowDefinition Height="*"/>
+       <RowDefinition Height="60"/>
+       <RowDefinition Height="60"/>
+       <RowDefinition Height="60"/>
        <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
 
     <Grid.ColumnDefinitions>
         <ColumnDefinition Width="*"/>
         <ColumnDefinition Width="*"/>
-        <ColumnDefinition Width="50"/>
+        <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
-    
-      <Image x:Name="imgPersonagem"
+
+  <Image x:Name="imgPersonagem"
              Aspect="AspectFill"
              Grid.RowSpan="5"
              Grid.ColumnSpan="3"/>
-      <ProgressBar
-         x:Name="linhaBar"
-         Grid.Row= "0"
-         Grid.ColumnSpan= "3"
-         ProgressColor="Blue"
-         Progress="0.3"/>
+    <Frame x:Name="linhas"
+           Padding="10"
+           BackgroundColor="transparent"
+           HeightRequest="150"
+           CornerRadius="35"
+           Grid.ColumnSpan="3"
+           VerticalOptions="Start">
+       <Grid>
+   <Grid.RowDefinitions>
+       <RowDefinition Height="*"/>
+       <RowDefinition Height="*"/>
+       <RowDefinition Height="*"/>
+   </Grid.RowDefinitions>
 
-         
+   <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="50"/>
+        <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <ProgressBar
+       x:Name="linhaBar"
+       Grid.Row="0"
+       Grid.Column= "1"
+       ProgressColor="Red"
+       Progress="0.3"/>
+    <ProgressBar
+         x:Name="linhaBar1"
+         Grid.Row="1"
+         Grid.Column= "1"
+         ProgressColor="Red"
+         Progress="0.3"/>
+    <ProgressBar
+         x:Name="linhaBar2"
+         Grid.Row="2"
+         Grid.Column= "1"
+         ProgressColor="Red"
+         Progress="0.3"/>
+    <Image Source="fome.jpg"
+         BackgroundColor="Transparent"
+         Grid.Column="0"
+         Grid.Row="0"/>
+    <Image Source="sede.jpg"
+         BackgroundColor="Transparent"
+         Grid.Column="0"
+         Grid.Row="1"/>
+    <Image Source="soninho.jpg"
+         BackgroundColor="Transparent"
+         Grid.Column="0"
+         Grid.Row="2"/>
+       </Grid>
+       </Frame>
+
       <ImageButton Source="fome.jpg"
+              Clicked="SeAlimentar"
               BackgroundColor="Transparent"
               Grid.Column="3"
               Grid.Row="1"/>
 
        <ImageButton Source="sede.jpg"
+              Clicked="BeberAgua"
               BackgroundColor="Transparent"
               Grid.Column="3"
               Grid.Row="2"/>
 
        <ImageButton Source="soninho.jpg"
+              Clicked="RecuperarEnergia"
               BackgroundColor="Transparent"
               Grid.Column="3"
               Grid.Row="3"/>
+         <Button
+                Text= "Trocar"
+                Clicked="BotaoTrocar"
+                HeightRequest="50"
+                CornerRadius="25"
+                BackgroundColor="#1b0cf0"
+                TextColor="White"
+                FontSize="20"
+                Grid.ColumnSpan="3"
+                Grid.Row="4"
+                VerticalOptions="End"/>
     </Grid>   
 
 
