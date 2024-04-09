@@ -3,9 +3,10 @@ public class Gato : Personagem
  {
     public Gato() : base()
     {
-        fome = 0;
-        sede = 0;
-        sono = 0;
+        fome = 0.8;
+        sede = 0.8;
+        sono = 0.8;
         NomeDaFoto = "gatinho.jpg";
+        PersonagemMorto = "morte.jpg";
     }
  }

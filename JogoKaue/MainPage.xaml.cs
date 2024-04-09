@@ -12,6 +12,14 @@ public partial class MainPage : ContentPage
     {
 		InitializeComponent();
 
+		var timer =
+		Application.Current.Dispatcher.CreateTimer();
+		timer.Interval =
+		TimeSpan.FromSeconds(8);
+		timer.Tick += (s,e) =>
+		PassouTempo();
+		timer.Start();
+
 		imgPersonagem.Source = "doguinho.jpg";
 		Scooby = new Cachorro();
 		Miau = new Gato();
@@ -20,8 +28,18 @@ public partial class MainPage : ContentPage
 		atual = Scooby;
 
 		imgPersonagem.Source = atual.GetNomeDaFoto();
-
+		 AdicionarVida();
     }
+
+	void PassouTempo()
+	{
+			atual.SetSono(atual.GetSono()-0.2);
+			atual.SetSede(atual.GetSede()-0.2);
+			atual.SetFome(atual.GetFome()-0.2);
+			AdicionarVida();
+
+
+	}
      void BotaoTrocar(object sender, EventArgs args)
      {
 		if (atual == Scooby)
@@ -35,9 +53,9 @@ public partial class MainPage : ContentPage
      }
 	 void AdicionarVida()
 	{
-		progressoFome.Progress=atual.GetFome();
-		progressoSede.Progress=atual.GetSede();
-		progressoSono.Progress=atual.GetSono();
+		linhaBar.Progress=atual.GetFome();
+		linhaBar1.Progress=atual.GetSede();
+		linhaBar2.Progress=atual.GetSono();
 	}
 	void RecuperarEnergia(object sender, EventArgs args)
 	{

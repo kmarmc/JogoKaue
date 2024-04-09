@@ -5,6 +5,9 @@ namespace JogoKaue;
    public double sede;
    public double sono;
    public string NomeDaFoto;
+   public string PersonagemMorto;
+   public bool Morto;
+
 
    public Personagem()
    {
@@ -15,6 +18,9 @@ namespace JogoKaue;
    }      
    public string GetNomeDaFoto()
     {
+      if (Morto)
+      return PersonagemMorto;
+      else 
         return NomeDaFoto; 
     }
     
@@ -26,6 +32,7 @@ namespace JogoKaue;
       fome = 1; 
       else if (f < 0)
       fome = 0;
+      Morto= true;
    }
    public double GetFome()
     {
@@ -39,6 +46,8 @@ namespace JogoKaue;
       sede = 1; 
       else if (s < 0)
       sede = 0;
+      Morto= true;
+
    }
    public double GetSede()
     {
@@ -52,6 +61,8 @@ namespace JogoKaue;
       sono = 1; 
       else if (p < 0)
       sono = 0;
+       Morto= true;
+
    }
    public double GetSono()
     {
