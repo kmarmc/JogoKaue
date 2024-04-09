@@ -15,7 +15,7 @@ public partial class MainPage : ContentPage
 		var timer =
 		Application.Current.Dispatcher.CreateTimer();
 		timer.Interval =
-		TimeSpan.FromSeconds(8);
+		TimeSpan.FromSeconds(5);
 		timer.Tick += (s,e) =>
 		PassouTempo();
 		timer.Start();
@@ -33,10 +33,13 @@ public partial class MainPage : ContentPage
 
 	void PassouTempo()
 	{
+			var estavaMorto=atual.GetMorto();
 			atual.SetSono(atual.GetSono()-0.2);
 			atual.SetSede(atual.GetSede()-0.2);
 			atual.SetFome(atual.GetFome()-0.2);
 			AdicionarVida();
+			if(estavaMorto!=atual.GetMorto())
+		imgPersonagem.Source = atual.GetNomeDaFoto();
 
 
 	}

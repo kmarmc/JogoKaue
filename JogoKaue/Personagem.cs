@@ -23,7 +23,10 @@ namespace JogoKaue;
       else 
         return NomeDaFoto; 
     }
-    
+    public bool GetMorto()
+    {
+      return Morto;
+    }
    public void SetFome (double f)
    {
       if (f >= 0 && f <= 1)
