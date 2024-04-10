@@ -53,6 +53,7 @@ public partial class MainPage : ContentPage
 				atual = Scooby;
 
 		imgPersonagem.Source= atual.GetNomeDaFoto();
+		AdicionarVida();
      }
 	 void AdicionarVida()
 	{

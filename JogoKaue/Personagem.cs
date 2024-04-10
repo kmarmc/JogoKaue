@@ -33,9 +33,11 @@ namespace JogoKaue;
       fome = f; 
       else if (f > 1)
       fome = 1; 
-      else if (f < 0)
+      else if (f <= 0)
+      {
       fome = 0;
       Morto= true;
+      }
    }
    public double GetFome()
     {
@@ -44,13 +46,14 @@ namespace JogoKaue;
   public void SetSede (double s)
    {
       if (s >= 0 && s <= 1)
-      sede = s;
+        sede = s;
       else if (s > 1)
-      sede = 1; 
-      else if (s < 0)
-      sede = 0;
-      Morto= true;
-
+        sede = 1; 
+      else if (s <= 0)
+      {
+        sede = 0;
+        Morto= true;
+      }
    }
    public double GetSede()
     {
@@ -62,9 +65,11 @@ namespace JogoKaue;
       sono = p; 
       else if (p > 1)
       sono = 1; 
-      else if (p < 0)
+      else if (p <= 0)
+      {
       sono = 0;
-       Morto= true;
+      Morto= true;
+      }
 
    }
    public double GetSono()
