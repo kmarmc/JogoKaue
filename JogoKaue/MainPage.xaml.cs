@@ -1,4 +1,6 @@
-﻿namespace JogoKaue;
+﻿using Microsoft.Maui.Controls;
+
+namespace JogoKaue;
 
 public partial class MainPage : ContentPage
 {
@@ -40,6 +42,12 @@ public partial class MainPage : ContentPage
 			AdicionarVida();
 			if(estavaMorto!=atual.GetMorto())
 		imgPersonagem.Source = atual.GetNomeDaFoto();
+			if (Scooby.GetMorto() &&
+				Miau.GetMorto() &&
+				Tiger.GetMorto())
+				{
+					Application.Current.MainPage = new GameOverPage();
+				}
 
 
 	}
